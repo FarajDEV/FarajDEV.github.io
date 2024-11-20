@@ -1,0 +1,1498 @@
+/* Importing a modern monospaced font */
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&display=swap');
+
+:root {
+  --primary-color: #0044cc; /* Deep Blue */
+  --secondary-color: #0056b3; /* Energetic Orange */
+  --light-gray: #f0f0f0; /* Light Gray */
+  --dark-gray: #333333; /* Dark Gray */
+  --medium-gray: #777777; /* Medium Gray */
+  --footer-color: #292b2b; /* Dark footer color */
+  --header-text-color: #0044cc; /* Primary Color for Header */
+  --left-side: #fff;
+  --test-one:rgb(172, 172, 172);
+  --test: rgb(225, 225, 225);
+  --written:#ffffff;
+  --see:#0056b3;
+  --more:#fff;
+  --contact: #007BFF;
+  --btnn: #007BFF;
+  --hover: #e07b00;
+  --faraj: #0056b3;
+  --blue: #1E88E5;
+  --blue-f:#0056b3;
+}
+
+/* Reset Styles */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%; /* 1rem = 10px */
+}
+
+body {
+  padding-top: 6rem;  /* Adjust based on your navbar height */
+  font-family: 'Fira Code', 'Roboto Mono', monospace;  /* Clean, modern monospaced font */
+  line-height: 1.6;
+  font-size: 1.6rem;
+  color: var(--dark-gray);
+  background-color: var(--light-gray);
+  overflow-x: hidden;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+#header {
+  color: var(--light-gray);
+  height: 100vh;
+  position: relative;
+}
+
+#tt{
+
+  padding: 0;
+  margin-top:-170px ;
+}
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 0;
+  position: fixed;  /* Fixed position for navbar */
+  top: 0;  /* Stick it to the top */
+  left: 0;
+  width: 100%;  /* Ensure it spans across the top */
+  background-color: var(--test-one);  /* Set background to black */
+  z-index: 1000;  /* Ensures the navbar stays on top */
+}
+
+nav .logo {
+  width: 80px;
+
+}
+nav .logo2 {
+  width: 40px;
+ margin-right: 10px;
+  margin-left: 15px;
+  
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+}
+
+nav ul li {
+  margin: 0 2rem;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #070707;
+  font-size: 2rem;
+  font-weight: 500;
+  padding: 5px 5px; /* Espace autour du texte */
+  border: 0.5px solid transparent; /* Bordure invisible */
+  border-radius: 5px; /* Coins arrondis */
+ 
+  transition: background-color 0.3s, color 0.3s; /* Transition pour les effets */
+}
+
+
+nav ul li a:hover {
+  color: rgb(6, 55, 140);
+  transform: translateY(-2px);
+}
+
+.fa-bars,
+.fa-square-xmark {
+  font-size: 2.5rem;
+  cursor: pointer;
+  display: none;
+}
+
+/* Header Text */
+.header-text {
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+}
+
+.header-text p {
+  font-size: 2.2rem;
+  font-weight: 600;
+}
+
+.header-text h1 {
+  font-size: 5rem;
+  margin-top: 1rem;
+  color: var(--header-text-color);
+}
+
+.header-text .orange-text {
+  color: var(--faraj);
+}
+
+@media (max-width: 768px) {
+  nav ul {
+    display: none;
+  }
+
+  .fa-bars {
+    display: block;
+  }
+
+  .header-text h1 {
+    font-size: 4rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .header-text h1 {
+    font-size: 3.5rem;
+  }
+
+  .header-text p {
+    font-size: 2rem;
+  }
+}
+
+/* About Section */
+#about {
+  padding: 6rem 0;
+  background-color: var(--light-gray);
+}
+
+.sub-title {
+  font-size: 3.2rem;
+  text-align: center;
+  margin-bottom: 3rem;
+  color: var(--dark-gray);
+}
+
+.about-col-2 {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.text1 {
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+  color: var(--medium-gray);
+}
+
+.tab-titles {
+  display: flex;
+  justify-content: center;
+  margin-top: 3rem;
+}
+
+.tab-links {
+  font-size: 1.7rem;
+  cursor: pointer;
+  margin: 0 1rem;
+  padding: 1rem;
+  color: var(--dark-gray);
+  transition: color 0.3s ease;
+}
+
+.tab-links.active-link {
+  color: var(--secondary-color);
+  font-weight: 600;
+  display: inline-block;
+  padding: 10px 15px; /* Espace interne pour donner un aspect de bouton */
+  border: 2px solid var(--secondary-color); /* Bordure */
+  border-radius: 4px; /* Optionnel : coins légèrement arrondis */
+  background-color: white; /* Couleur de fond */
+  text-align: center; /* Aligner le texte au centre */
+  cursor: pointer; /* Changer le curseur pour indiquer un bouton cliquable */
+ margin-bottom: 20px;
+  transition: background-color 0.3s ease, color 0.3s ease; /* Animation pour un effet interactif */
+}
+
+.tab-contents {
+  display: none;
+  font-size: 1.6rem;
+  color: var(--dark-gray);
+}
+
+.tab-contents.active-tab {
+  display: block;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+ul li {
+  margin-bottom: 1rem;
+}
+
+span {
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .about-col-2 {
+    padding: 0 2rem;
+  }
+}
+
+/* Services Section */
+#services {
+  background-color: var(--light-gray);
+  padding: 6rem 0;
+}
+
+.services-list {
+
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3rem;
+  justify-content: center;
+}
+
+.services-list div {
+  background-color: var(--test);
+  padding: 2.5rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  max-width: 320px;
+  flex: 1;
+}
+
+.services-list div:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.services-list i {
+  font-size: 3.5rem;
+  margin-bottom: 1.5rem;
+  color: var(--secondary-color);
+}
+
+.services-list h2 {
+  font-size: 2.2rem;
+  margin-bottom: 1.2rem;
+}
+
+.services-list p {
+  font-size: 1.5rem;
+  color: var(--medium-gray);
+}
+
+@media (max-width: 1024px) {
+  .services-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centers the items vertically */
+    align-items: center; /* Centers the items horizontally */
+  }
+}
+
+
+/* Portfolio Section */
+#portfolio {
+  padding: 6rem 0;
+  background-color: var(--light-gray);
+}
+
+.work-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3rem;
+  justify-content: center;
+}
+
+.work {
+  position: relative;
+  overflow: hidden;
+  max-width: 320px;
+  flex: 1;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.work img {
+  width: 100%;
+  transition: transform 0.3s ease;
+}
+
+.work:hover img {
+  transform: scale(1.1);
+}
+html {
+  scroll-padding-top: 80px; /* Adjust this value to match your navbar height */
+  scroll-behavior: smooth;
+}
+.layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  color: var(--written);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.work:hover .layer {
+  opacity: 1;
+}
+
+.layer h3 {
+  font-size: 2.2rem;
+  margin-bottom: 1.5rem;
+}
+
+.layer p {
+  font-size: 1.6rem;
+  text-align: center;
+}
+
+.layer a {
+  color: var(--secondary-color);
+  font-size: 2.2rem;
+  margin-top: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .work {
+    max-width: 100%;
+  }
+}
+
+/* Contact Section */
+#contact {
+  padding: 6rem 0;
+  background-color: var(--light-gray);
+}
+
+.contact-left {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+
+.sub-title {
+  font-size: 3.2rem;
+  margin-bottom: 3rem;
+  color: var(--dark-gray);
+}
+
+.ecriture {
+  font-size: 1.8rem;
+  color: var(--medium-gray);
+  margin-bottom: 1.5rem;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 2.5rem;
+}
+
+.social-link img {
+  width: 45px;
+  transition: transform 0.3s ease;
+}
+
+.social-link:hover img {
+  transform: scale(1.1);
+}
+
+/* Button */
+/* Parent container */
+.container {
+  text-align: center;
+}
+
+/* Button styling */
+.btn {
+  margin-top:3%;
+  display: inline-block;
+  background-color: var(--see);
+  color: var(--more);
+  padding: 1.2rem 2.4rem;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 1.8rem;
+  transition: background-color 0.3s ease;
+}
+
+
+.btn:hover {
+  background-color: var(--hover);
+}
+
+/* Footer */
+footer {
+  background-color: var(--footer-color);
+  color: var(--light-gray);
+  text-align: center;
+  padding: 2.5rem 0;
+  font-size: 1.6rem;
+}
+
+footer p {
+  margin: 0;
+  font-weight: 400;
+}
+
+
+
+
+
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+}
+
+
+section {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s, transform 0.6s;
+  will-change: opacity, transform;
+}
+
+
+.section-visible {
+  animation: fadeIn 0.6s forwards;
+}
+
+
+.section-hidden {
+  animation: fadeOut 0.6s forwards;
+}
+
+section {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+
+.section-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+
+
+
+
+/* General Contact Section Styling */
+.contact-section {
+  padding: 60px 0;
+  background-color: #171717;
+  font-family: 'Fira Code', 'Roboto Mono', monospace;  /* Clean, modern monospaced font */
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+/* Left Column */
+.contact-left {
+  flex: 1;
+  padding-right: 30px;
+}
+
+.contact-left h2 {
+  font-size: 32px;
+  margin-bottom: 20px;
+  color: #333;
+  font-weight: bold;
+}
+
+.contact-info .info-item {
+  margin-bottom: 15px;
+  font-size: 16px;
+  color: #555;
+}
+
+.contact-info .info-item a {
+  text-decoration: none;
+  color: var(--contact);
+}
+
+.contact-info .info-item a:hover {
+  text-decoration: underline;
+}
+
+.social-links {
+  display: flex;
+  margin-top: 30px;
+}
+
+.social-link img {
+  width: 40px;
+  height: 40px;
+  margin-right: 15px;
+  transition: transform 0.3s;
+}
+
+.social-link img:hover {
+  transform: scale(1.1);
+}
+
+.download-btn {
+  display: inline-block;
+  margin-top: 30px;
+  padding: 12px 20px;
+  background-color: var(--btnn);
+  color: #fff;
+  font-size: 16px;
+  text-decoration: none;
+  border-radius: 5px;
+  text-align: center;
+  transition: background-color 0.3s;
+}
+
+.download-btn:hover {
+  background-color: #0056b3;
+}
+
+/* Right Column (Form) */
+.contact-right {
+  flex: 1;
+  padding-left: 30px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 16px;
+  background-color: #fff;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #007BFF;
+  outline: none;
+}
+
+.contact-form button {
+  width: 100%;
+  padding: 12px;
+  background-color: #007BFF;
+  color: #fff;
+  font-size: 18px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+    margin-bottom: 40px;
+}
+
+.contact-form button:hover {
+  background-color: #0056b3;
+}
+
+/* Footer */
+/* Styling for the copyright section */
+.copyright {
+
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #333;  /* Dark background for the box */
+  color: #fff;             /* White text */
+  text-align: center;
+  padding: 10px 0;
+  font-size: 14px;
+ font-family: 'Fira Code', 'Roboto Mono', monospace;  /* Clean, modern monospaced font */
+  box-shadow: 0px -2px 10px rgba(0, 0, 0, 0.1);  /* Subtle shadow */
+  z-index: 1000;  /* Ensures it stays above other content */
+}
+
+/* Optional: Add hover effect to give a professional feel */
+.copyright:hover {
+  background-color: #444;  /* Darker background on hover */
+  cursor: pointer;
+}
+
+/* For smaller screens, adjust text size and spacing */
+@media (max-width: 768px) {
+  .copyright {
+    font-size: 12px;  /* Slightly smaller text for mobile */
+    padding: 8px 0;
+  }
+}
+
+
+
+
+
+
+
+
+.copyright i {
+  color:#0056b3;
+  margin-left: 5px;
+}
+
+
+
+
+/* Responsive Design */
+
+/* For small devices (mobile phones, less than 768px) */
+@media (max-width: 768px) {
+  .contact-left, .contact-right {
+    flex: 1 1 100%; /* Full width for both columns */
+    padding: 15px;
+  }
+
+  .contact-left h2 {
+    font-size: 28px;
+  }
+
+  .contact-info .info-item {
+    font-size: 14px;
+  }
+
+  .social-links {
+    justify-content: center;
+  }
+
+  .social-link img {
+    width: 35px; /* Smaller icons */
+    height: 35px;
+  }
+
+  .download-btn {
+    padding: 10px 18px; /* Adjust padding for mobile */
+    font-size: 14px;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    width: 100%; /* Ensure form fields take up full width */
+    margin-bottom: 15px;
+  }
+
+  .contact-form button {
+    width: 100%; /* Button should be full width */
+    padding: 15px;
+  }
+}
+
+/* For very small devices (portrait phones, less than 480px) */
+@media (max-width: 480px) {
+  .contact-left h2 {
+    font-size: 24px;
+  }
+
+  .contact-info .info-item {
+    font-size: 12px;
+  }
+
+  .social-link img {
+    width: 30px;
+    height: 30px;
+  }
+
+  .download-btn {
+    padding: 8px 14px;
+    font-size: 12px;
+  }
+
+  .contact-form button {
+    padding: 14px;
+    font-size: 16px;
+  }
+}
+
+
+
+@media (max-width: 1200px) {
+  .work-list {
+    justify-content: center;
+  }
+
+  .work {
+    width: 30%; /* 3 items per row on medium screens */
+    margin: 15px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .work-list {
+    justify-content: center;
+  }
+
+  .work {
+    width: 45%; /* 2 items per row on smaller tablets */
+    margin: 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .work-list {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .work {
+    width: 80%; /* Full-width items on small tablets */
+    margin: 15px 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .sub-title {
+    font-size: 2rem; /* Reduce subtitle size on very small screens */
+  }
+}
+
+
+
+
+
+
+
+/* Default styles for desktop */
+#sidemenu {
+  display: flex;
+  list-style: none;
+}
+
+#sidemenu li {
+  margin-right: 20px;
+}
+
+/* Style for the toggle button on mobile */
+.toggle-btn {
+  display: none; /* Hidden by default on desktop */
+  font-size: 30px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* Style for the close button inside the menu */
+.close-btn {
+  display: none; /* Hidden by default */
+  font-size: 30px;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* Media query for smaller screens (e.g., mobile) */
+@media (max-width: 900px) {
+  #sidemenu {
+      display: none; /* Hide the sidebar menu by default */
+      flex-direction: column;
+      position: fixed;
+      top: 0;
+      right: 0; /* Sidebar will now be on the right */
+      width: 30%; /* Sidebar width (30% of screen) */
+      height: 100%;
+      background-color: var(--left-side); /* Or any color you prefer */
+      text-align: left;
+      padding-top: 50px;
+      box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2); /* Adjust the shadow direction */
+  }
+
+  #sidemenu .toggle-container {
+      order: -1; /* Moves the toggle to the top */
+     
+     
+  }
+
+  #sidemenu li {
+      margin: 20px 0;
+      padding-left: 20px;
+  }
+
+  .toggle-btn {
+      display: block; /* Show the toggle button on small screens */
+  }
+
+  .close-btn {
+      display: block; /* Show the close button inside the sidebar */
+  }
+
+  /* Show the navbar when it's toggled */
+  #sidemenu.open {
+      display: flex;
+  }
+  .toggle-label{
+    margin-top: 20px ;
+    margin-bottom: 10px;
+  }
+}
+
+
+/* When the menu is open, the body is covered with a semi-transparent overlay */
+body.menu-open {
+  overflow: hidden; /* Prevent scrolling when the menu is open */
+}
+
+
+#toggle-btn{
+  margin-right: 30px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.toggle-input {
+  display: none;
+}
+
+.toggle-label {
+  display: block;
+  width: 60px;
+  height: 30px;
+  background-color: #ccc;
+  border-radius: 30px;
+  position: relative;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-left: 30px;
+  margin-right: 20px;
+}
+
+.toggle-input:checked + .toggle-label {
+  background-color: #000000;
+}
+
+.toggle-circle {
+  content: '';
+  position: absolute;
+  width: 26px;
+  height: 26px;
+  background-color: white;
+  border-radius: 50%;
+  top: 2px;
+  left: 2px;
+  transition: transform 0.3s;
+}
+
+.toggle-input:checked + .toggle-label .toggle-circle {
+  transform: translateX(30px);
+}
+
+
+.fa-arrow-up-right-from-square{
+  color: #00abef;
+}
+
+#see-more{
+  color: #00fff2;
+}
+.contact-left .section-title{
+  color: #000000;
+}
+
+.sub-title{
+  color: black;
+}
+
+.contact-form .submit-btn{
+  background-color: var(--btnn);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* CODE CHATBOT */
+
+/* Chatbot icon styles */
+#chatbot-icon {
+
+  position: fixed;
+  bottom: 30px; /* Distance from the bottom */
+  right: 30px; /* Distance from the right */
+  background: var(--blue); /* Gradient background */
+  color: white;
+  font-size: 32px; /* Icon size */
+  padding: 20px;
+  border-radius: 50%; /* Circular shape */
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease, width 0.3s ease, height 0.3s ease, bottom 0.3s ease, right 0.3s ease, transform 0.3s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  z-index: 999;
+}
+
+/* Hover effect */
+#chatbot-icon:hover {
+  background: var(--blue); /* Darker gradient on hover */
+  transform: scale(1.1); /* Slightly enlarge the icon */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Increase shadow on hover */
+}
+
+/* Icon change when chatbot window is open */
+#chatbot-icon.opened {
+  background: var(--blue); /* Different gradient when opened */
+  border-radius: 50%; /* Maintain circular shape */
+  width: 70px; /* Adjust width */
+  height: 70px; /* Adjust height */
+  bottom: 90px; /* Move button up */
+  right: 10px; /* Align with chatbot window */
+  transform: rotate(45deg); /* A little rotation effect */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#chatbot-icon.opened:hover {
+  background: var(--blue-f); /* Even darker gradient on hover when open */
+  transform: scale(1.1) rotate(45deg); /* Maintain the rotation and enlarge */
+}
+
+/* Chatbot window */
+#chatbot-window {
+  margin-top: 100px;
+  top: 0; /* Position it at the very top */
+    position: fixed;
+    bottom: 80px; /* Increased bottom distance */
+    right: 30px; /* Consistent right distance */
+    width: 350px;
+    max-height: 80vh;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    display: none;
+    flex-direction: column;
+    transition: transform 0.3s ease, bottom 0.3s ease, right 0.3s ease;
+    transform: translateY(100%);
+    overflow: hidden;
+  }
+
+#chatbot-window.open {
+  top: 0; 
+  display: flex;
+  transform: translateY(0);
+  bottom: 90px;
+  right: 60px;
+  border-radius: 10px 10px 0 0;
+}
+
+/* Create the tail effect */
+#chatbot-window.open::after {
+  content: '';
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 10px;
+  border-style: solid;
+  border-color: transparent transparent #fff transparent;
+}
+
+/* Chatbot header */
+#chatbot-header {
+  background-color: var(--blue);
+  color: white;
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 10px 10px 0 0;
+}
+
+#chatbot-header button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+#chatbot-header button:hover {
+  color: #0134b5;
+}
+
+/* Chat messages area */
+#chatbot-messages {
+  padding: 15px;
+  overflow-y: auto;
+  flex-grow: 1;
+  font-size: 14px;
+  max-height: 60%;
+  color: #000000;
+}
+
+/* User and bot messages */
+#chatbot-messages div {
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 8px;
+  max-width: 80%;
+  word-wrap: break-word;
+}
+
+#chatbot-messages .user {
+  background-color: #d1ecf1;
+  align-self: flex-end;
+}
+
+#chatbot-messages .bot {
+  background-color: #e2e3e5;
+  align-self: flex-start;
+}
+
+/* Input area */
+#chatbot-input-container {
+  display: flex;
+  padding: 12px;
+  border-top: 1px solid #ccc;
+  background-color: #f8f9fa;
+}
+
+#chatbot-input {
+  flex-grow: 1;
+  padding: 10px;
+  font-size: 14px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  margin-right: 10px;
+}
+
+#chatbot-input:focus {
+  outline: none;
+  border-color: var(--blue);
+}
+
+#chatbot-input-container button {
+  background-color: var(--blue);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 14px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+#chatbot-input-container button:hover {
+  background-color: var(--blue-f);
+}
+
+/* Suggestions container */
+/* Suggestions container */
+#suggestions-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 15px;
+  max-height: 200px; /* Increased height to allow more options to show */
+  overflow-y: auto; /* This will make the scrollbar appear when content overflows */
+  width: 100%; /* Ensure suggestions container takes up full width */
+}
+
+/* Suggestion buttons */
+#suggestions-container button {
+  background-color: var(--blue);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+#suggestions-container button:hover {
+  background-color: var(--blue-f);
+}
+
+/* Adding scrollbar styles for better visibility */
+#suggestions-container::-webkit-scrollbar {
+  width: -80px; /* Adjust scrollbar width */
+}
+
+#suggestions-container::-webkit-scrollbar-thumb {
+  background-color: #888; /* Scrollbar color */
+  border-radius: 4px; /* Rounded corners for the scrollbar thumb */
+}
+
+#suggestions-container::-webkit-scrollbar-thumb:hover {
+  background-color: #555; /* Darker thumb color when hovered */
+}
+
+/* Adding a fade effect for the scrollbar thumb */
+#suggestions-container::-webkit-scrollbar {
+  transition: all 0.3s ease;
+}
+
+#suggestions-container::-webkit-scrollbar-thumb {
+  transition: background-color 0.3s ease;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  #chatbot-window {
+    width: 80%;
+    right: 10px;
+    bottom: 100px;
+  }
+
+
+  #chatbot-window.open {
+    display: flex;
+    transform: translateY(0);
+    bottom: 90px;
+    right: 25px;
+    border-radius: 10px 10px 0 0;
+  }
+  #chatbot-icon {
+    bottom: 20px;
+    right: 10px;
+    font-size: 28px;
+    padding: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  #chatbot-window {
+    width: 90%;
+    bottom: 80px;
+  }
+  #chatbot-window.open {
+    display: flex;
+    transform: translateY(0);
+    bottom: 90px;
+    right: 25px;
+    border-radius: 10px 10px 0 0;
+  }
+  #chatbot-icon {
+    bottom: 20px;
+    right: 10px;
+    font-size: 28px;
+    padding: 18px;
+  }
+}
+  #chatbot-icon {
+    bottom: 15px;
+    right: 10px;
+    font-size: 26px;
+    padding: 15px;
+  }
+/* Add this to your styles.css */
+
+@keyframes ellipsis {
+  0% { content: '.'; }
+  25% { content: '..'; }
+  50% { content: '...'; }
+  75% { content: '..'; }
+  100% { content: '.'; }
+}
+
+#loading-dots::after {
+  content: '.';
+  animation: ellipsis 1.5s infinite step-end;
+  font-size: 20px;
+  color: #888;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#appointmentButton {
+  display: block;  /* Ensures the button is treated as a block-level element */
+  margin: 0 auto;  /* Centers the button horizontally */
+  padding: 20px 30px;
+  margin-top: 40px; 
+  background-color: var(--blue);  
+  color: white;  
+  border: none;  
+  border-radius: 8px;  
+  font-size: 16px;  
+  font-weight: bold;  
+  text-align: center;  
+  cursor: pointer;  
+  transition: background-color 0.3s ease, transform 0.3s ease; 
+  position: absolute;  /* Position it absolutely */
+  top: 50%;  /* Move it to the vertical center */
+  left: 50%;  /* Move it to the horizontal center */
+  transform: translate(-50%, -50%);  /* Offset the position to truly center it */
+}
+
+
+#appointmentButton:hover {
+  background-color: var(--blue-f);  /* Darker blue for hover */
+  transform: translate(-50%, -50%) scale(1.1);  /* Slightly increase the size */
+  box-shadow: 0 4px 20px var(--blue-f);  /* Add a glowing effect */
+}
+
+#appointmentButton:focus {
+  outline: none;  /* Removes focus outline */
+}
+
+
+
+button:focus {
+    outline: none;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    overflow: auto;
+    padding-top: 100px;
+    padding-bottom: 30px;
+}
+
+.modal-content {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 40px;
+    max-width: 600px;
+    width: 90%;
+    margin: 0 auto;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 28px;
+    font-weight: bold;
+    color: #888;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: #333;
+    text-decoration: none;
+}
+
+h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    font-weight: 600;
+    color: var(--blue); /* Changed to blue */
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+label {
+    font-size: 16px;
+    font-weight: 500;
+    color: #555;
+    text-align: left;
+}
+
+input, select, textarea {
+    padding: 15px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+input:focus, select:focus, textarea:focus {
+    border-color: var(--blue); /* Changed to blue */
+    outline: none;
+}
+
+textarea {
+    resize: vertical;
+}
+
+button[type="button"] {
+    background-color: var(--blue); /* Changed to blue */
+    color: white;
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: none;
+    width: 100%;
+}
+
+button[type="button"]:hover {
+    background-color:var(--blue); /* Changed to blue */
+}
+
+select, input[type="number"], input[type="date"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+input[type="number"] {
+    -webkit-appearance: textfield;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+#paymentAmount {
+    display: none;
+}
+
+input[type="number"], select, input[type="date"] {
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+    h2 {
+        font-size: 24px;
+    }
+
+    button {
+        font-size: 16px;
+        padding: 12px 30px;
+    }
+
+    .modal-content {
+        padding: 30px;
+    }
+
+    form {
+        gap: 15px;
+    }
+
+    input, select, textarea {
+        font-size: 14px;
+        padding: 12px;
+    }
+
+    button[type="button"] {
+        font-size: 16px;
+        padding: 12px;
+    }
+}
+

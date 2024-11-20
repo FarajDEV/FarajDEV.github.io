@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Portfolio Website</title>
+    <link rel="shortcut icon" href="images/last.png" />
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+    <script
+      src="https://kit.fontawesome.com/b6a55bd264.js"
+      crossorigin="anonymous"
+    ></script>
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
+
+<script src="index.js"></script>
+<script type="text/javascript">
+   (function(){
+      emailjs.init({
+        publicKey: "kglfaVgLmPocDmbke",
+      });
+   })();
+</script>
+  </head>
+  <body>
+     <!-- Chatbot Icon -->
+  <div id="chatbot-icon" onclick="toggleChatbot()">💬</div>
+
+ 
+    <div id="header">
+      
+
+      <div class="container">
+        <nav>
+          <div>
+          <img src="images/last.png" class="logo2">
+          <img src="images/logo.png" class="logo" />
+        </div>
+          <button class="toggle-btn" id="toggle-btn">&#9776;</button> <!-- Menu button -->
+          <ul id="sidemenu">
+              <button class="close-btn" id="close-btn">&times;</button> <!-- Close button -->
+              <li><a href="#header">Home</a></li>
+              <li><a href="#about">About</a></li>
+              <li><a href="#services">Services</a></li>
+              <li><a href="#portfolio">Portfolio</a></li>
+              <li><a href="#contact">Contact</a></li>
+              <div class="toggle-container">
+                <input type="checkbox" id="dark-mode-toggle" class="toggle-input" />
+                <label for="dark-mode-toggle" class="toggle-label">
+                    <span class="toggle-circle"></span>
+                </label>
+            </div>
+          </ul>
+      </nav>
+      
+      
+        
+        <div class="header-text" id="tt">
+          <p class="moved-paragraph">IT/Robotics Engineer</p>
+          <h1 class="moved-paragraph">
+            <section></section>
+            Hi, I'm <span class="orange-text moved-paragraph" >Faraj,</span><br />
+            Together, let's create <br />something wonderful!
+          </h1>
+        </div>
+        
+        
+      </div>
+      <div id="container">
+        <!-- Button to trigger the modal -->
+         <div>
+          <button id="appointmentButton">Book an Appointment</button>
+         </div>
+        
+
+        <!-- The Modal for the Appointment Form -->
+        <div id="calendarModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Book an Appointment</h2>
+                
+                <!-- Appointment Form -->
+                <form id="appointmentForm">
+                    <label for="userName">Your Name</label>
+                    <input type="text" id="userName" name="userName" required placeholder="Enter your name">
+
+                    <label for="userEmail">Your Email</label>
+                    <input type="email" id="userEmail" name="userEmail" required placeholder="Enter your email">
+
+                    <label for="missionSubject">Mission Subject</label>
+                    <input type="text" id="missionSubject" name="missionSubject" required placeholder="Enter mission subject">
+
+                    <label for="missionDescription">Mission Description</label>
+                    <textarea id="missionDescription" name="missionDescription" required placeholder="Describe the mission" rows="4"></textarea>
+
+                    <label for="paymentAmountRange">Payment Amount</label>
+                    <select id="paymentAmountRange" name="paymentAmountRange">
+                        <option value="100-1000">$100 - $1,000</option>
+                        <option value="1000-10000">$1,000 - $10,000</option>
+                        <option value="over10000">More than $10,000</option>
+                    </select>
+
+                    <!-- Input for specifying the custom amount when 'More than $10,000' is selected -->
+                    <input type="number" id="paymentAmount" name="paymentAmount" placeholder="Enter amount" style="display:none;">
+
+                    <label for="appointmentDate">Appointment Date</label>
+                    <input type="date" id="appointmentDate" name="appointmentDate" required>
+
+                    <label for="appointmentTime">Appointment Time</label>
+                    <select id="appointmentTime" name="appointmentTime" required>
+                        <option value="">Select Time</option>
+                    </select>
+
+                    <button type="button" id="confirmAppointment">Confirm Appointment</button>
+                </form>
+            </div>
+        </div>
+    
+    </div>
+    
+    </div>
+  </section>
+  
+  <section>
+    <!-- about -->
+    <div id="about">
+      <div class="container">
+        <div class="row">
+        
+          <div class="about-col-2">
+            <h1 class="sub-title">About Me</h1>
+            <p class="text1">
+              ❑ Passionate about computer science, electronics, cybersecurity,
+              and machine learning, I am seeking to collaborate on innovative
+              projects. <br />❑ With strong programming skills (C, Python,
+              JavaScript), networking, and machine learning expertise, I am
+              dedicated to delivering high-quality technical solutions.<br />❑
+              Your satisfaction is my priority. <br />❑ Explore my portfolio and
+              achievements on LinkedIn and GitHub, and contact me to discuss
+              your needs.<br /><br /><br />
+            </p>
+
+            <div class="tab-titles">
+              <p class="tab-links active-link" onclick="opentab('skills')">
+                Skills
+              </p>
+              <p class="tab-links"  onclick="opentab('experience')">
+                Experience
+              </p>
+              <p class="tab-links"  onclick="opentab('education')">Education</p>
+            </div>
+            <div class="tab-contents active-tab" id="skills">
+              <ul>
+                <li>
+                  <span>Programming Languages: </span><br />
+                  C, JavaScript, Python, HTML, CSS3.
+                </li>
+              </ul>
+              <ul>
+                <li>
+                  <span>Frameworks: </span><br />
+                  Node.js, React.js, TensorFlow, XGBoost, SocketIO.
+                </li>
+              </ul>
+              <ul>
+                <li>
+                  <span>Electronics: </span><br />
+                  Pspice, Matlab, LabVIEW.
+                </li>
+              </ul>
+              <ul>
+                <li>
+                  <span>Machine Learning: </span><br />
+                  TensorFlow, XGBoost, Pandas, AWS SageMaker.
+                </li>
+              </ul>
+              <ul>
+                <li>
+                  <span>Database Management: </span><br />
+                  MySQL, MongoDB.
+                </li>
+              </ul>
+              <ul>
+                <li>
+                  <span>Networks & Cloud: </span><br />
+                  DHCP, DNS, LAN (Basics).
+                </li>
+              </ul>
+              <ul>
+                <li>
+                  <span>Robotics: </span><br />
+                  Arduino, Robot Operating System (ROS2).
+                </li>
+              </ul>
+              <ul>
+                <li>
+                  <span>Version Control: </span><br />
+                  Git, GitHub.
+                </li>
+              </ul>
+              <ul>
+                <li>
+                  <span>Development Environment: </span><br />
+                  Visual Studio, PyCharm.
+                </li>
+              </ul>
+            </div>
+
+            <div class="tab-contents" id="experience">
+              <ul>
+                <li>
+                  <span>2023 - 2024: </span><br />
+                  Freelance Developer.<br />
+                  <span><br />12/05/2023 - 11/06/2023: </span><br />
+                  I completed a one-month internship at the port of Annaba in Algeria, where I contributed to optimizing logistics management systems by implementing IT and electronic solutions, including the development and maintenance of software.<br />
+                  <span><br />15/03/2023 - 30/03/2023: </span><br />
+                  Professional observation internship at Sonelgaz company.<br />
+                  <span><br />2018 - 2022: </span><br />
+                  Actively participated in the developer community of
+                  StackOverFlow and GitHub by answering technical questions,
+                  providing solutions, and contributing to discussions.<br />
+                </li>
+              </ul>
+            </div>
+            <div class="tab-contents" id="education">
+              <ul>
+                <li>
+                  <span><br />09/2023 – 06/2024: </span><br />
+                  3rd year Bachelor of Science in Engineering - MECHATRONICS.<br />
+                </li>
+              </ul>
+
+              <ul>
+                <li>
+                  <span><br />09/2022 – 06/2023: </span><br />
+                  Engineering Cycle - Electrical Engineering.<br />
+                </li>
+              </ul>
+              <ul>
+                <li>
+                  <span><br />09/2020 – 06/2022: </span><br />
+                  Engineering School Preparatory Cycle - Sciences and
+                  Technologies.<br />
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+ 
+    <!-- SERVICES -->
+    <section>
+    <div id="services">
+      <div class="container">
+        <h1 class="sub-title">My Services</h1>
+        <div class="services-list">
+          <div>
+            <i class="fa-solid fa-code"></i>
+            <h2>❑ Full-Stack Web Development</h2>
+            <p class="annaba">
+              <br />
+              ✅ I will design and develop dynamic, scalable, and responsive web
+              applications using React.js for the front end and Node.js for the
+              back end. <br /><br />✅ I will integrate databases like MySQL or
+              MongoDB to handle data storage, and implement SocketIO for
+              real-time communication features and use them to create anything
+              you want.
+            </p>
+          </div>
+          <div>
+            <i class="fa-solid fa-brain"></i>
+            <h2>❑ Machine Learning Model</h2>
+            <p class="annaba">
+              <br />
+              ✅ I will Build and deploy machine learning models using
+              TensorFlow and XGBoost for predictive analytics, classification
+              tasks, and more.
+              <br /><br />
+              ✅ I will Utilize AWS SageMaker for scalable deployment, model
+              management and more.
+              <br /><br />
+              ✅ I will Ensure to optimize model performance and accuracy.
+            </p>
+          </div>
+          <div>
+            <i class="fa-solid fa-robot"></i>
+            <h2>❑ IoT and Robotics Solutions</h2>
+            <p class="annaba">
+              <br />
+              ✅ I will Develop for you IoT solutions and robotics applications
+              using Arduino and ROS2.<br />
+              <br />✅ I will integrate for you hardware and software components
+              to create automated systems and smart devices. <br /><br />✅ I
+              will Leverage my experience in creating mobile autonomous robots
+              to design innovative and efficient robotic solutions.
+            </p>
+          </div>
+          <div>
+            <i class="fa-solid fa-square-root-variable"></i>
+            <h2>❑ Automated Test</h2>
+            <p class="annaba">
+              <br />
+              ✅ I will design and implement automated test and measurement
+              systems using LabVIEW. <br /><br />✅ I will create solutions for
+              data acquisition, instrument control, and real-time data analysis,
+              ideal for applications in research and industrial environments.
+              <br /><br />
+              ✅ I will create for you tools for immediate data processing and
+              visualization.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+     <!-- portfolio -->
+     <section>
+      <div id="portfolio">
+        <div class="container">
+          <h1 class="sub-title">My Work</h1>
+          <div class="work-list">
+            <div class="work">
+              <img id="image1" src="images/work-1.jpg" />
+              <div class="layer">
+                <h3>✨ Project No. 1:</h3>
+                <p>
+                  Development of a VI for the Conversion of Arabic and Roman Numerals with LabVIEW 💻
+                </p>
+                <a href="https://www.linkedin.com/feed/update/urn:li:activity:7211743869908959233/" id="see-more">
+                   <span style="text-decoration: underline;">See more</span>
+                </a>
+              </div>
+            </div>
+            <div class="work">
+              <img id="image2" src="images/work-2.jpg" />
+              <div class="layer">
+                <h3>✨ Project No. 2:</h3>
+                <p>
+                  Improvement of Brain Tumor Diagnosis with AI 💻
+                </p>
+                <a href="https://www.linkedin.com/feed/update/urn:li:activity:7211780618123145217/" id="see-more">
+                   <span style="text-decoration: underline;">See more</span>
+                </a>
+              </div>
+            </div>
+            <div class="work">
+              <img id="image3" src="images/work-3.jpg" />
+              <div class="layer">
+                <h3>✨ Project No. 3:</h3>
+                <p>
+                  Prediction of Credit Card Default with AWS SageMaker Studio 🚀
+                </p>
+                <a href="https://www.linkedin.com/feed/update/urn:li:activity:7211985972979208193/" id="see-more">
+                   <span style="text-decoration: underline;">See more</span>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="work-list">
+            <div class="work">
+              <img id="image4" src="images/work-4.png" />
+              <div class="layer">
+                <h3>✨ Project No. 4:</h3>
+                <p>Autonomous Delivery System with Web Interface. 💻</p>
+                <a href="https://github.com/FarajDEV/RobotMobileLivraisonAutonome-InterfaceWeb" id="see-more">
+                  <span style="text-decoration: underline;">See more</span>
+                </a>
+              </div>
+            </div>
+            <div class="work">
+              <img id="image5" src="images/work-5.jpg" />
+              <div class="layer">
+                <h3>✨ Project No. 5:</h3>
+                <p>Creation of an Autonomous Mobile Robot 🔄 🔐</p>
+                <a href="https://www.linkedin.com/feed/update/urn:li:activity:7212118714215739392/" id="see-more">
+                  <span style="text-decoration: underline;">See more</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </section>
+    <!--end services  -->
+ <!-- START -->
+<section id="contact" class="contact-section">
+  <div class="container">
+    <div class="row">
+      <div class="contact-left col-md-6">
+        <h2 class="section-title">Contact Me</h2>
+        <div class="contact-info">
+          <p class="info-item">
+            <i class="fa-regular fa-envelope"></i>
+            <a href="mailto:chenikifaraj@hotmail.com">chenikifaraj@hotmail.com</a>
+          </p>
+          <p class="info-item">
+            <i class="fa-solid fa-phone-volume"></i>
+            <a href="tel:+33602549549">06 02 54 95 49</a>
+          </p>
+        </div>
+
+        <div class="social-links">
+          <a href="https://www.linkedin.com/in/cheniki-faraj/" target="_blank" class="social-link">
+            <img src="images/linkedIn.png" alt="LinkedIn" />
+          </a>
+          <a href="https://github.com/FarajDEV" target="_blank" class="social-link">
+            <img src="images/github.png" alt="GitHub" />
+          </a>
+          <a href="mailto:chenikifaraj@hotmail.com" class="social-link">
+            <img src="images/mail.png" alt="Email" />
+          </a>
+        </div>
+
+        <a href="images/CV_CHENIKI_Faraj.pdf" download class="btn download-btn">
+          Download Curriculum Vitae
+        </a>
+      </div>
+
+      <div class="contact-right col-md-6">
+        <form name="submit-to-google-sheet" class="contact-form">
+          <input type="text" id="name" name="Name" placeholder="Your Name" required />
+          <input type="email" id="email" name="Email" placeholder="Your Email" required />
+          <textarea name="Message" id="message" rows="6" placeholder="Your Message" required></textarea>
+          <button type="submit" class="btn submit-btn" onclick="sendMail()">Submit</button>
+        </form>
+        <span id="msg"></span>
+      </div>
+    </div>
+  </div>
+
+  <div class="copyright">
+    <p>Copyright © CHENIKI Faraj. Made with <i class="fa-solid fa-heart"></i>.</p>
+  </div>
+  
+</section>
+
+
+    <!-- end -->
+    <script>
+      var tablinks = document.getElementsByClassName("tab-links");
+      var tabcontents = document.getElementsByClassName("tab-contents");
+      function opentab(tabname) {
+        for (tablink of tablinks) {
+          tablink.classList.remove("active-link");
+        }
+        for (tabcontent of tabcontents) {
+          tabcontent.classList.remove("active-tab");
+        }
+        event.currentTarget.classList.add("active-link");
+        document.getElementById(tabname).classList.add("active-tab");
+      }
+
+
+    // Screen change:
+
+    </script>
+ 
+   
+    
+   <script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbxd3Xn7fxNFP99-wx6QMmcuoc-gSfkqjBBUUE2AiWLtBRHTIz835xX1MrUNTapnM0ON/exec'
+    const form = document.forms['submit-to-google-sheet']
+  
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => console.log('Success!', response))
+        .catch(error => console.error('Error!', error.message))
+    })
+  </script>
+  
+    <script src="script.js"></script>
+   <!-- Chatbot Window -->
+   <div id="chatbot-window">
+    <div id="chatbot-header">
+      <span>Chat with Me!</span>
+      <button onclick="toggleChatbot()">X</button>
+    </div>
+    <div id="chatbot-messages"></div>
+    <div id="chatbot-input-container">
+      <input type="text" id="chatbot-input" placeholder="Ask me anything..." onkeypress="handleInput(event)">
+      <button onclick="sendMessage()">Send</button>
+    </div>
+    <div id="suggestions-container"></div>
+  </div>
+  <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
+<script type="text/javascript">
+   (function(){
+      emailjs.init({
+        publicKey: "kULK13J3740WVr-ff",
+      });
+   })();
+</script>
+  </body>
+</html>
